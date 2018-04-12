@@ -2,7 +2,9 @@
 
 #include <iostream>
 
-model::Memory::Memory() { std::cout << "Memory" << std::endl; }
+namespace model {
+
+Memory::Memory(std::string name) : Model{std::move(name)} {};
 
 int model::Memory::addOffice(Office::Key key, std::string name) {
   std::cout << "addOffice" << std::endl;
@@ -20,3 +22,5 @@ std::optional<model::Office> model::Memory::getOffice(
   }
   return std::nullopt;
 }
+
+};  // namespace model

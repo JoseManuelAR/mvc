@@ -9,7 +9,7 @@ namespace model {
 
 class Memory : public Model {
  public:
-  Memory();
+  Memory(std::string name);
 
   virtual int addOffice(Office::Key key, std::string name) override;
   virtual std::optional<Office> getOffice(Office::Key) const override;

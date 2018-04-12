@@ -1,0 +1,1 @@
+add_library(rest STATIC rest.cpp restlistener.cpp)

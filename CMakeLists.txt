@@ -6,6 +6,19 @@ set(CMAKE_C_COMPILER /usr/bin/gcc-7)
 set(CMAKE_CXX_COMPILER /usr/bin/g++-7)
 
 add_subdirectory(model)
-include_directories(${PROJECT_SOURCE_DIR})
+target_include_directories(model PUBLIC ${CMAKE_CURRENT_LIST_DIR})
 
-add_subdirectory(main)
+add_subdirectory(event)
+target_include_directories(event PUBLIC ${CMAKE_CURRENT_LIST_DIR})
+
+add_subdirectory(view)
+target_include_directories(view PUBLIC ${CMAKE_CURRENT_LIST_DIR})
+
+add_subdirectory(rest)
+target_include_directories(rest PUBLIC ${CMAKE_CURRENT_LIST_DIR})
+
+add_subdirectory(controller)
+target_include_directories(controller PUBLIC ${CMAKE_CURRENT_LIST_DIR})
+
+add_subdirectory(mvc)
+target_include_directories(mvc PUBLIC ${CMAKE_CURRENT_LIST_DIR})
